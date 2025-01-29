@@ -1,0 +1,72 @@
+<div class="sidebar">
+  <!-- Sort by Price -->
+
+  <form action="/products" method="get">
+    <label class="form-title">Sort By Price:</label>
+    <br />
+    <input type="radio" name="sort" id="priceAsc" value="priceAsc" <%=
+    locals.sort === 'priceAsc' ? 'checked' : ''%> />
+    <label for="priceAsc">Ascending</label><br />
+    <input type="radio" name="sort" id="priceDesc" value="priceDesc" <%=
+    locals.sort === 'priceDesc' ? 'checked' : ''%> />
+    <label for="priceDesc">Descending</label><br /><br />
+    <label for="sort" class="form-title">Sort By Name:</label><br />
+    <input type="radio" name="sort" id="nameAsc" value="nameAsc" <%= locals.sort
+    === 'nameAsc' ? 'checked' : ''%> />
+    <label for="nameAsc">Ascending</label><br />
+    <input type="radio" name="sort" id="nameDesc" value="nameDesc" <%=
+    locals.sort === 'nameDesc' ? 'checked' : ''%>/>
+    <label for="nameDesc">Descending</label><br /><br />
+    <label for="filter" class="form-title">Filter By Category:</label><br />
+    <% listedCategories.forEach((category) => { %> <input type="checkbox"
+    id="<%= category.category%>" name="category" value="<%= category.category
+    %>" <%= locals.selectedCategory &&
+    locals.selectedCategory.includes(category.category) ? 'checked' : '' %>/>
+    <label
+      for="<%= category.category %>"
+      class="category-label"
+      style="
+        color: <%=category.fontColor%>;
+        background-color: <%=category.color%>;
+      "
+    >
+      <%= category.category %></label
+    ><br />
+    <% }) %>
+    <button class="apply-btn" type="submit">Apply Filters</button>
+  </form>
+
+  <!-- Sort by Name -->
+  <!-- <form action="/products" method="get">
+      <label for="sort" class="form-title">Sort By Name:</label><br />
+      <input type="radio" name="sort" id="nameAsc" value="nameAsc" <%=
+      locals.sort === 'nameAsc' ? 'checked' : ''%> />
+      <label for="nameAsc">Ascending</label><br />
+      <input type="radio" name="sort" id="nameDesc" value="nameDesc" <%=
+      locals.sort === 'nameDesc' ? 'checked' : ''%>/>
+      <label for="nameDesc">Descending</label><br />
+  </form> -->
+  <!-- Filter by Category -->
+
+  <!-- <form action="/products" method="get">
+      <label for="filter" class="form-title">Filter By Category:</label><br />
+      <% listedCategories.forEach((category) => { %> <input type="checkbox"
+      id="<%= category.category%>" name="category" value="<%=
+      category.category %>" <%= locals.selectedCategory &&
+      locals.selectedCategory.includes(category.category) ? 'checked' : ''
+      %>/>
+      <label
+          for="<%= category.category %>"
+          class="category-label"
+          style="
+              color: <%=category.fontColor%>;
+              background-color: <%=category.color%>;
+          ">
+          <%= category.category %></label
+      ><br />
+
+      <% }) %>
+  </form> -->
+
+  <!-- Filter by Color -->
+</div>
