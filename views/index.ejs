@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/bootstrap.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/frootie-logo.svg" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="main-content">
+        <h1>welcome</h1>
+        <p class="message">
+          Welcome to Frootie! Where all of your inventory needs are met. Here,
+          you have full control over your products. You can add any product or
+          category for your store, complete with color coding and custom images!
+          Give it a try and be sure to leave a review in the app store!
+        </p>
+        <div class="main-links">
+          <a href="/products" class="view-products-bg">
+            <div class="view-products">
+              <p class="name">view products</p>
+              <p class="arrow">→</p>
+            </div>
+          </a>
+          <a href="/categories" class="view-categories-bg">
+            <div class="view-categories">
+              <p class="name">view categories</p>
+              <p class="arrow">→</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

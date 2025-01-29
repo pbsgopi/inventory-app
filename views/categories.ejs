@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/categories.css" />
+    <script src="/bootstrap.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/frootie-logo.svg" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="main-content">
+        <div class="header-addbtn">
+          <h1>categories</h1>
+          <a href="/categories/new" class="btn btn-custom btn-sm"
+            >Add a Category</a
+          >
+        </div>
+        <div class="categories-list">
+          <% listedCategories.forEach((category) => { %>
+          <a href="/products?category=<%=category.category%>">
+            <div
+              class="text-bg-<%=category.category%> category-card"
+              style="
+                color: <%=category.fontColor%>;
+                background-color: <%=category.color%>;
+              "
+            >
+              <h2><%= category.category %></h2>
+            </div></a
+          >
+          <% }) %>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

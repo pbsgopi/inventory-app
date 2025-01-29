@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/editproduct.css" />
+    <script src="/bootstrap.js" defer></script>
+    <title>Edit <%= product.name%></title>
+    <link rel="icon" type="image/x-icon" href="<%= product.src%>" />
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="main-content">
+    
+        <div class="header-addbtn"><a href="/products/<%=product.id%>" class="btn btn-custom btn-sm btn-return">
+            << Return to <%=product.name%>
+          </a>
+          <span class="disclaimer">Note: Only certain fields on default items can be edited.</span>
+        </div>
+        <form
+          class="edit-form view-product-container"
+          action="/products/edit/<%=product.id%>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="view-image">
+            <% if(product.isdefault === true) { %>
+                <img
+              src="<%= product.src %>"
+              class="view-product-img"
+              alt="<%= product.name %>"
+            />
+          <%  } else { %>
+            <img
+              src="<%= product.src %>"
+              class="view-product-img"
+              alt="<%= product.name %>"
+            />
+            <input type="file" name="src" id="src" />
+            <% } %>
+          </div>
+          <div class="view-info">
+            <div class="name-category">
+                <h1>
+               <% if(product.isdefault === true) { %>
+                    <%=product.name%>
+              <%  } else { %>
+                    <input
+                    type="text"
+                    name="name"
+                    value="<%=product.name%>"
+                    required
+                  />
+                <% } %>
+                </h1>
+              <H3
+                >$<input
+                  type="number"
+                  name="price"
+                  min="0.01"
+                  step="any"
+                  value="<%=product.price%>"
+                  required
+              /></H3>
+            </div>
+            <h5 class="product-category" style="color: <%=product.fontColor%>; background-color: <%=product.color%>;">
+
+            <select name="category" id="category">
+              <% listedCategories.forEach((category) => { %>
+                <option value="<%= category.category %>" 
+                  <%= category.category === selectedCategory ? 'selected' : '' %>>
+                  <%= category.category %>
+                </option>
+              <% }) %>
+            </select>
+                
+            </h5>
+            <h5>
+                <label for="brand">Brand:</label>
+              <input
+                type="text"
+                name="brand"
+                value="<%=product.brand%>"
+                required
+              />
+            </h5>
+            <br />
+            <textarea name="description" maxlength="300"><%=product.description%></textarea>
+            <H5>
+                <label for="brand">Quantity:</label>
+
+              <input
+                type="number"
+                name="quantity"
+                min="1"
+                max="999"
+                value="<%=product.quantity%>"
+                required
+            /></H5>         
+          </div>
+          <button type="submit" class="btn btn-custom submit-btn">Submit Edits</button>
+        </form>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/productview.css" />
+    <script src="/bootstrap.js" defer></script>
+    <title><%= product.name %></title>
+    <link rel="icon" type="image/x-icon" href="<%= product.src%>" />
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="product-content">
+        <a href="/products" class="btn btn-custom btn-sm">
+          << Return to Products
+        </a>
+
+        <div class="view-product-container">
+          <div class="view-image">
+            <img
+              src="<%= product.src %>"
+              class="view-product-img"
+              alt="<%= product.name %>"
+            />
+          </div>
+          <div class="view-info">
+            <div class="name-category">
+              <h1><%= product.name %></h1>
+              <H3>$<%=product.price%></H3>
+            </div>
+            <h5
+              class="product-category"
+              style="
+                color: <%=product.fontColor%>;
+                background-color: <%=product.color%>;
+              "
+            >
+              <%= product.category %>
+            </h5>
+            <h5>Brand: <%=product.brand%></h5>
+            <br />
+            <p class="product-description"><%= product.description %></p>
+            <H5>Quantity: <%=product.quantity%></H5>
+          </div>
+          <div class="edit-delete-btns">
+            <form action="/products/edit/<%=product.id%>" method="get">
+              <button type="submit" class="btn btn-custom edit-product-btn">
+                Edit
+              </button>
+            </form>
+            <% if (!product.isdefault) { %>
+            <form action="/products/delete/<%=product.id%>" method="post">
+              <button type="submit" class="btn btn-custom delete-product-btn">
+                Delete
+              </button>
+
+              <% } else { %>
+              <button class="btn btn-custom" disabled>Delete</button>
+            </form>
+
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

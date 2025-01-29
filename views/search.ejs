@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/bootstrap.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/frootie-logo.svg" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="main-content">
+        <div class="header-addbtn">
+          <h1>search results for '<%=query%>'</h1>
+        </div>
+        <a href="/products" class="btn btn-custom btn-sm return-btn"
+          ><< Return to products</a
+        >
+        <% if(products.length < 1) { %>
+        <h3>No results found.</h3>
+        <%} else { %>
+
+        <div class="search-products-container">
+          <% products.forEach((product) => { %>
+          <a href="/products/<%=product.id%>"
+            ><div class="product-card">
+              <img
+                src="<%= product.src %>"
+                class="product-img"
+                alt="..."
+                width="80px"
+              />
+
+              <div class="card-info">
+                <div class="name-price">
+                  <p class="card-name"><%= product.name %></p>
+                  <p class="card-price">$<%= product.price %></p>
+                </div>
+                <p class="card-brand">Brand: <%= product.brand %></p>
+                <p class="card-brand">Quantity: <%= product.quantity %></p>
+
+                <span
+                  class="badge rounded-pill"
+                  style="
+                    color: <%=product.fontColor%>;
+                    background-color: <%= product.color %>;
+                  "
+                  ><%= product.category %></span
+                >
+              </div>
+            </div>
+          </a>
+          <% })} %>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/addcategory.css" />
+    <link rel="icon" type="image/x-icon" href="/frootie-logo.svg" />
+    <script src="/bootstrap.js" defer></script>
+    <title>Add A Category</title>
+  </head>
+  <body>
+    <%- include("partials/navbar") %>
+    <div class="container">
+      <div class="main-content">
+        <div class="header-addbtn">
+          <h1>add a category</h1>
+        </div>
+        <div class="category-form-container">
+          <form class="category-form" action="/categories/new" method="post">
+            <label for="category">Category:</label>
+            <input type="text" name="category" required />
+            <label for="color">Label Color:</label>
+            <input type="color" name="color" id="color" required />
+
+            <button type="submit" class="btn btn-custom add-category-submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>
