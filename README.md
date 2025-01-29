@@ -1,6 +1,6 @@
 # inventory-app
 
-<a href="https://inventory-app-jbjm.onrender.com/">Live Preview</a>
+<a href="https://pbsgopi.github.io/inventory-app">Live Preview</a>
 
 CRUD inventory application from the Odin Project. 
 
