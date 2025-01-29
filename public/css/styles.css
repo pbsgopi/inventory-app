@@ -1,0 +1,223 @@
+@import "../css/bootstrap.css";
+
+:root {
+  --custbg-light: hsl(136, 54%, 83%);
+}
+
+.navbar-img {
+  margin-right: 1rem;
+}
+
+.bg-custom {
+  background-color: var(--custbg-light);
+}
+
+.footer {
+  position: sticky;
+  top: 100vh;
+  width: 100%;
+  background-color: var(--custbg-light);
+  margin-top: 2rem;
+}
+
+.btn-custom {
+  background-color: var(--custbg-light);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+}
+
+.btn-custom:hover {
+  background-color: hsl(136, 54%, 93%);
+  box-shadow: rgba(0, 0, 0, 0.36) 0px 1px 3px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+  min-height: calc(100vh - 117px - 2rem);
+}
+
+.header-addbtn {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sidebar-products {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.144);
+}
+
+.sidebar {
+  min-width: 160px;
+  max-width: 250px;
+  background-color: #c9e6c42d;
+  padding: 1rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.144);
+  border-radius: 1rem 0 0 0;
+}
+
+.search-products-container {
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 190px));
+
+  align-items: start;
+  gap: 1rem;
+}
+
+.products-container {
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 190px));
+
+  align-items: start;
+  gap: 1rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+  background-color: hsla(120, 100%, 95%, 0.148);
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 1rem;
+  transition: all 200ms ease;
+}
+
+.product-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.96) 0px 0px 4px;
+  cursor: pointer;
+}
+
+.product-img {
+  padding: 1rem 0 0 0;
+}
+
+.card-info {
+  width: 100%;
+}
+
+.name-price {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  font-weight: 600;
+  padding: 0rem 1rem;
+}
+
+.card-brand {
+  font-size: 0.75rem;
+  padding: 0rem 1rem;
+  line-height: 0.8rem;
+}
+
+.badge {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px;
+  width: 100%;
+  border-radius: 0 0 1rem 1rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.078);
+}
+
+.category-label {
+  padding: 0rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 2rem;
+}
+
+form:hover {
+  cursor: pointer;
+}
+
+.sidebar > *:not(:first-child) .form-title {
+  margin-top: 1.5rem;
+}
+
+.form-title {
+  font-weight: 600;
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+}
+
+.main-links {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+}
+
+.view-products {
+  display: flex;
+  gap: 1rem;
+  font-size: 3rem;
+  background-image: linear-gradient(
+      rgba(255, 238, 238, 0.9),
+      rgba(160, 255, 166, 0.9)
+    ),
+    url(../images/food-bg.jpg);
+  background-size: 100%;
+  background-position: top;
+  display: flex;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px;
+  transition: all 500ms ease;
+}
+
+.view-categories {
+  display: flex;
+  gap: 1rem;
+  backdrop-filter: blur(10px);
+  background-image: linear-gradient(
+      rgba(194, 255, 197, 0.7),
+      rgba(255, 255, 186, 0.9)
+    ),
+    url(../images/food-bg.jpg);
+  background-size: 100%;
+  background-position: bottom;
+  font-size: 3rem;
+  display: flex;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 5px;
+  transition: all 500ms ease;
+}
+
+.view-products:hover,
+.view-categories:hover {
+  gap: 2rem;
+  background-size: 105%;
+  box-shadow: rgba(0, 0, 0, 0.46) 0px 0px 4px;
+  cursor: pointer;
+}
+
+.message {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.return-btn {
+  width: fit-content;
+}
+
+.apply-btn {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgb(181, 181, 181);
+  padding: 0.25rem 1rem;
+  margin-top: 1rem;
+  border-radius: 2rem;
+}
+
+.apply-btn:hover {
+  background-color: white;
+  outline: 1px solid rgba(0, 0, 0, 0.7);
+}

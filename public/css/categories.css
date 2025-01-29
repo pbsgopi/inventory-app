@@ -1,0 +1,53 @@
+@import "../css/styles.css";
+
+.categories-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 150px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
+  border-radius: 1rem;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+.category-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.96) 0px 0px 4px;
+  cursor: pointer;
+  color: #212529e0;
+}
+
+.delete-category-form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-img {
+  width: 1rem;
+}
+
+.delete-category-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 4px;
+}
+
+.delete-category-btn:hover {
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.96) 0px 0px 4px;
+  color: white;
+  background-color: hsl(0, 100%, 45%);
+}
